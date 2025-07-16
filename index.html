@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mind Map: Sambandh</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f4f4f9;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            overflow: hidden;
+        }
+        .mind-map {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            gap: 20px;
+        }
+        .node {
+            padding: 20px;
+            background-color: #97C2FC;
+            color: #ffffff;
+            border-radius: 10px;
+            text-align: center;
+            cursor: pointer;
+            width: 200px;
+            font-size: 16px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+        }
+        .node:hover {
+            background-color: #6699ff;
+        }
+        .tooltip {
+            display: none;
+            position: absolute;
+            background-color: rgba(0, 0, 0, 0.7);
+            color: #ffffff;
+            padding: 10px;
+            border-radius: 5px;
+            font-size: 14px;
+            width: 250px;
+        }
+        .tooltip:before {
+            content: '';
+            position: absolute;
+            top: 50%;
+            left: -10px;
+            transform: translateY(-50%);
+            border-left: 10px solid rgba(0, 0, 0, 0.7);
+            border-top: 10px solid transparent;
+            border-bottom: 10px solid transparent;
+        }
+    </style>
+</head>
+<body>
+
+<div class="mind-map">
+    <div class="node" data-tooltip="व्याख्या: स्पर्श | उपमा: कुर्सी फर्श पर">
+        संयोग
+    </div>
+    <div class="node" data-tooltip="व्याख्या: स्थायी गुण | उपमा: दूध में सफेदी">
+        समवाय
+    </div>
+    <div class="node" data-tooltip="व्याख्या: पहचान-संबंध | उपमा: पिता-पुत्र संबंध">
+        स्वरूप
+    </div>
+    <div class="node" data-tooltip="व्याख्या: एकता | उपमा: सोना और सोने की अंगूठी">
+        तादात्म्य
+    </div>
+    <div class="node" data-tooltip="व्याख्या: समानता | उपमा: चेहरा = चाँद">
+        सादृश्य
+    </div>
+    <div class="node" data-tooltip="व्याख्या: समय का जुड़ाव | उपमा: सुबह उठना">
+        कालिक
+    </div>
+    <div class="node" data-tooltip="व्याख्या: स्पष्टता | उपमा: कौनसा लड़का नहीं है?">
+        अवच्छेदकता
+    </div>
+    <div class="node" data-tooltip="व्याख्या: किसी चीज़ का न होना | उपमा: कमरे में कुर्सी नहीं है">
+        अभाव
+    </div>
+    <div class="node" data-tooltip="व्याख्या: गुण तक पहुंचना | उपमा: लाल गेंद देखना">
+        संयुक्त-समवाय
+    </div>
+    <div class="node" data-tooltip="व्याख्या: गुण > वस्तु > वस्तु | उपमा: कपड़े का रंग">
+        समवेत-समवाय
+    </div>
+    <div class="node" data-tooltip="व्याख्या: दो गुण एक स्थान पर | उपमा: कपड़े में धागे और रंग">
+        स्वसमवायी-समवेतत्व
+    </div>
+</div>
+
+<div class="tooltip" id="tooltip"></div>
+
+<script>
+    // Get all the nodes and the tooltip element
+    const nodes = document.querySelectorAll('.node');
+    const tooltip = document.getElementById('tooltip');
+
+    // Function to show tooltip
+    function showTooltip(event) {
+        const tooltipText = event.target.getAttribute('data-tooltip');
+        tooltip.textContent = tooltipText;
+        tooltip.style.display = 'block';
+        tooltip.style.top = event.clientY + 10 + 'px';  // position tooltip below cursor
+        tooltip.style.left = event.clientX + 10 + 'px';  // position tooltip to the right of cursor
+    }
+
+    // Function to hide tooltip
+    function hideTooltip() {
+        tooltip.style.display = 'none';
+    }
+
+    // Attach event listeners to each node
+    nodes.forEach(node => {
+        node.addEventListener('mouseenter', showTooltip);
+        node.addEventListener('mouseleave', hideTooltip);
+    });
+</script>
+
+</body>
+</html>
