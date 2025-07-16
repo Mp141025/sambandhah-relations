@@ -1,135 +1,134 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="hi">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Mind Map: Sambandh</title>
-    <style>
-        body {
-            font-family: Arial, sans-serif;
-            background-color: #f4f4f9;
-            margin: 0;
-            padding: 0;
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            height: 100vh;
-            overflow: hidden;
-        }
-
-        .mind-map {
-            display: flex;
-            flex-wrap: wrap;
-            justify-content: center;
-            gap: 30px;
-            max-width: 1200px;
-            padding: 20px;
-        }
-
-        .node {
-            padding: 20px;
-            background-color: #4CAF50;
-            color: white;
-            border-radius: 15px;
-            text-align: center;
-            cursor: pointer;
-            width: 200px;
-            font-size: 16px;
-            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
-            transition: background-color 0.3s, transform 0.3s;
-        }
-
-        .node:hover {
-            background-color: #45a049;
-            transform: scale(1.1);
-        }
-
-        .tooltip {
-            display: none;
-            position: absolute;
-            background-color: rgba(0, 0, 0, 0.7);
-            color: #fff;
-            padding: 15px;
-            border-radius: 5px;
-            font-size: 14px;
-            max-width: 300px;
-            white-space: pre-wrap;
-            word-wrap: break-word;
-            z-index: 10;
-        }
-
-        .tooltip::after {
-            content: '';
-            position: absolute;
-            top: 50%;
-            left: -10px;
-            transform: translateY(-50%);
-            border-left: 10px solid rgba(0, 0, 0, 0.7);
-            border-top: 10px solid transparent;
-            border-bottom: 10px solid transparent;
-        }
-    </style>
+  <meta charset="UTF-8">
+  <title>दर्शनशास्त्र संबंध मानचित्र</title>
+  <style>
+    body {
+      font-family: sans-serif;
+      background: #f5f5f5;
+      padding: 20px;
+    }
+    .mindmap {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 20px;
+      justify-content: center;
+    }
+    .block {
+      background: #fff;
+      border: 2px solid #333;
+      border-radius: 10px;
+      width: 250px;
+      cursor: pointer;
+      padding: 15px;
+      box-shadow: 2px 2px 6px rgba(0,0,0,0.1);
+      transition: transform 0.2s;
+    }
+    .block:hover {
+      transform: scale(1.03);
+    }
+    .title {
+      font-weight: bold;
+      font-size: 18px;
+      color: #333;
+      text-align: center;
+    }
+    .content {
+      display: none;
+      margin-top: 10px;
+      font-size: 15px;
+      color: #444;
+    }
+  </style>
 </head>
 <body>
+  <h2 style="text-align: center;">दर्शनशास्त्र: संबंध मानचित्र</h2>
+  <div class="mindmap">
+    <div class="block" onclick="toggle(this)">
+      <div class="title">संयोग</div>
+      <div class="content">
+        <b>सरल व्याख्या:</b> स्पर्श <br>
+        <b>उपमा:</b> कुर्सी फर्श पर
+      </div>
+    </div>
+    <div class="block" onclick="toggle(this)">
+      <div class="title">समवाय</div>
+      <div class="content">
+        <b>सरल व्याख्या:</b> स्थायी गुण <br>
+        <b>उपमा:</b> दूध में सफेदी
+      </div>
+    </div>
+    <div class="block" onclick="toggle(this)">
+      <div class="title">स्वरूप</div>
+      <div class="content">
+        <b>सरल व्याख्या:</b> पहचान-संबंध <br>
+        <b>उपमा:</b> पिता-पुत्र संबंध
+      </div>
+    </div>
+    <div class="block" onclick="toggle(this)">
+      <div class="title">तादात्म्य</div>
+      <div class="content">
+        <b>सरल व्याख्या:</b> एकता <br>
+        <b>उपमा:</b> सोना और सोने की अंगूठी
+      </div>
+    </div>
+    <div class="block" onclick="toggle(this)">
+      <div class="title">सादृश्य</div>
+      <div class="content">
+        <b>सरल व्याख्या:</b> समानता <br>
+        <b>उपमा:</b> चेहरा = चाँद
+      </div>
+    </div>
+    <div class="block" onclick="toggle(this)">
+      <div class="title">कालिक</div>
+      <div class="content">
+        <b>सरल व्याख्या:</b> समय का जुड़ाव <br>
+        <b>उपमा:</b> सुबह उठना
+      </div>
+    </div>
+    <div class="block" onclick="toggle(this)">
+      <div class="title">अवच्छेदकता</div>
+      <div class="content">
+        <b>सरल व्याख्या:</b> स्पष्टता <br>
+        <b>उपमा:</b> कौनसा लड़का नहीं है?
+      </div>
+    </div>
+    <div class="block" onclick="toggle(this)">
+      <div class="title">अभाव</div>
+      <div class="content">
+        <b>सरल व्याख्या:</b> किसी चीज़ का न होना <br>
+        <b>उपमा:</b> कमरे में कुर्सी नहीं है
+      </div>
+    </div>
+    <div class="block" onclick="toggle(this)">
+      <div class="title">संयुक्त-समवाय</div>
+      <div class="content">
+        <b>सरल व्याख्या:</b> गुण तक पहुंचना <br>
+        <b>उपमा:</b> लाल गेंद देखना
+      </div>
+    </div>
+    <div class="block" onclick="toggle(this)">
+      <div class="title">समवेत-समवाय</div>
+      <div class="content">
+        <b>सरल व्याख्या:</b> गुण > वस्तु > वस्तु <br>
+        <b>उपमा:</b> कपड़े का रंग
+      </div>
+    </div>
+    <div class="block" onclick="toggle(this)">
+      <div class="title">स्वसमवायी-समवेतत्व</div>
+      <div class="content">
+        <b>सरल व्याख्या:</b> दो गुण एक स्थान पर <br>
+        <b>उपमा:</b> कपड़े में धागे और रंग
+      </div>
+    </div>
+  </div>
 
-<div class="mind-map">
-    <div class="node" data-tooltip="व्याख्या: स्पर्श | उपमा: कुर्सी फर्श पर">
-        संयोग
-    </div>
-    <div class="node" data-tooltip="व्याख्या: स्थायी गुण | उपमा: दूध में सफेदी">
-        समवाय
-    </div>
-    <div class="node" data-tooltip="व्याख्या: पहचान-संबंध | उपमा: पिता-पुत्र संबंध">
-        स्वरूप
-    </div>
-    <div class="node" data-tooltip="व्याख्या: एकता | उपमा: सोना और सोने की अंगूठी">
-        तादात्म्य
-    </div>
-    <div class="node" data-tooltip="व्याख्या: समानता | उपमा: चेहरा = चाँद">
-        सादृश्य
-    </div>
-    <div class="node" data-tooltip="व्याख्या: समय का जुड़ाव | उपमा: सुबह उठना">
-        कालिक
-    </div>
-    <div class="node" data-tooltip="व्याख्या: स्पष्टता | उपमा: कौनसा लड़का नहीं है?">
-        अवच्छेदकता
-    </div>
-    <div class="node" data-tooltip="व्याख्या: किसी चीज़ का न होना | उपमा: कमरे में कुर्सी नहीं है">
-        अभाव
-    </div>
-    <div class="node" data-tooltip="व्याख्या: गुण तक पहुंचना | उपमा: लाल गेंद देखना">
-        संयुक्त-समवाय
-    </div>
-    <div class="node" data-tooltip="व्याख्या: गुण > वस्तु > वस्तु | उपमा: कपड़े का रंग">
-        समवेत-समवाय
-    </div>
-    <div class="node" data-tooltip="व्याख्या: दो गुण एक स्थान पर | उपमा: कपड़े में धागे और रंग">
-        स्वसमवायी-समवेतत्व
-    </div>
-</div>
-
-<div class="tooltip" id="tooltip"></div>
-
-<script>
-    const nodes = document.querySelectorAll('.node');
-    const tooltip = document.getElementById('tooltip');
-
-    // Show tooltip on hover
-    nodes.forEach(node => {
-        node.addEventListener('mouseenter', function(event) {
-            const tooltipText = event.target.getAttribute('data-tooltip');
-            tooltip.textContent = tooltipText;
-            tooltip.style.display = 'block';
-            tooltip.style.top = `${event.clientY + 15}px`;
-            tooltip.style.left = `${event.clientX + 15}px`;
-        });
-
-        // Hide tooltip when the mouse leaves
-        node.addEventListener('mouseleave', function() {
-            tooltip.style.display = 'none';
-        });
-    });
-</script>
-
+  <script>
+    function toggle(el) {
+      const content = el.querySelector('.content');
+      content.style.display = content.style.display === 'block' ? 'none' : 'block';
+    }
+  </script>
 </body>
 </html>
